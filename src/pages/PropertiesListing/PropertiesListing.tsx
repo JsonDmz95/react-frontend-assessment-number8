@@ -20,7 +20,7 @@ const PropertiesListing: React.FC<PropertiesListingProps> = ({loading, error}) =
     <section className="page_section">
       <div className="container">
 		{loading && <>Loading...</>}
-        <div className={styles.propertieslisting}>
+        <div>
 			{data && (
 				<ul>
 					{data.map((property) => (
