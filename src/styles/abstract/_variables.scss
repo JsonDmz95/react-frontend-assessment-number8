@@ -1,0 +1,42 @@
+:root {
+  --font-primary: "Plus Jakarta Sans", Arial, sans-serif;
+
+  --font-size: 16px;
+  --line-height-default: 1.5;
+  --font-wight-default: 500;
+
+  --font-heading: 2.375em;
+  --font-title: 1.625em;
+  --font-subtitle: 1.125em;
+  --font-body: 1em;
+  --font-small: 0.75em;
+
+  --color-neo-green: #9bff06;
+  --color-neo-pink: #ffa6f6;
+  --color-black: #00091d;
+  --color-grey: #5f5c70;
+  --color-light-grey: #e5e7eb;
+  --color-almost-white: #f7f7f7;
+  --color-white: #ffffff;
+
+  --color-primary: var(--color-neo-green);
+  --color-focused: var(--color-neo-pink);
+
+  --color-text: var(--color-black);
+  --color-bg: var(--color-almost-white);
+
+  --border-radius: 6px;
+  --border-radius-button: 3px;
+  --border-width: 2px;
+  --border-color: var(--color-black);
+
+  --shadow-hover: 3px 3px 0 var(--color-black);
+  --shadow-big-hover: 8px 8px 0 var(--color-black);
+
+  --content-max-with: 1300px;
+
+  --breakpoint-tablet: 768px;
+  --breakpoint-laptop: 992px;
+  --breakpoint-desktop: 1200px;
+  --breakpoint-widescreen: 1440px;
+}

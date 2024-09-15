@@ -1,0 +1,13 @@
+.logo {
+  font-weight: 800;
+  font-size: 36px;
+  color: var(--color-primary);
+  -webkit-text-stroke: 1px var(--color-black);
+  line-height: 1;
+
+  text-shadow: 5px 0px 0px var(--color-black);
+
+  span{
+    color: var(--color-white);
+  }
+}

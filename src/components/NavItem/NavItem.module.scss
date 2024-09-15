@@ -1,0 +1,17 @@
+.nav_item {
+    a{
+        padding: 5px 0;
+        text-decoration: none;
+        font-size: var(--font-subtitle);
+
+        &:hover,
+        &:focus,
+        &:active{
+            text-decoration: underline;
+        }
+    }
+}
+
+.active a{
+    text-decoration: underline;
+}

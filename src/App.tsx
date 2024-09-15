@@ -1,12 +1,14 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { PropertiesListing, PropertyDetails } from "./pages";
 
+import { Header } from "./components";
 import { PublicRoutes } from "./models";
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
+        <Header />
         <Routes>
           {/* Redirect Home to PropertiesListing */}
           <Route
