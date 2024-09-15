@@ -1,10 +1,31 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-import { PropertiesListing, PropertyDetails } from "./pages";
+import { PropertiesListing, PropertyDetails } from "@/pages";
+import { Property, PublicRoutes } from "@/models";
 
-import { Header } from "./components";
-import { PublicRoutes } from "./models";
+import { Header } from "@/components";
+import { useEffect } from "react";
+import { useFetch } from "@/hooks";
+import { useStore } from "@/store";
+
+// const API_URL = import.meta.env.VITE_API_URL;
 
 function App() {
+  const { data, error, loading } = useFetch<Property[]>(
+    "/api/LA/listings.json"
+  );
+
+  const setPropertiesList = useStore((state) => state.updatePropertiesList);
+
+  useEffect(() => {
+    if (data) {
+      setPropertiesList(data);
+    }
+  }, [data, setPropertiesList]);
+
+  if (error) {
+    console.error(error);
+  }
+
   return (
     <div className="App">
       <BrowserRouter>
@@ -22,7 +43,7 @@ function App() {
             element={
               <>
                 {/* TODO: Add Page Tile */}
-                <PropertiesListing />
+                <PropertiesListing loading={loading} error={error}/>
               </>
             }
           />

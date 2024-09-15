@@ -56,6 +56,12 @@ a {
     display: block;
 }
 
+.page_section{
+  position: relative;
+  display: block;
+  padding: 2.5em 0 6.25em;
+}
+
 @media (min-width:  768px){
     .hide_mobile{
         display: inline-block;
