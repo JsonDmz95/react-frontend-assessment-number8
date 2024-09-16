@@ -10,7 +10,7 @@ import { useStore } from "@/store";
 // const API_URL = import.meta.env.VITE_API_URL;
 
 function App() {
-  const { data, error, loading } = useFetch<Property[]>(
+  const { data, error } = useFetch<Property[]>(
     "/api/LA/listings.json"
   );
 
