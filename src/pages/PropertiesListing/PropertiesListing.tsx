@@ -1,35 +1,53 @@
 "use client";
 
-import React from "react";
+// import { PropertyCard } from "./components";
+import React, { Suspense, lazy } from "react";
+
 import styles from "./PropertiesListing.module.scss";
 import { useStore } from "@/store";
 
+const PropertyCard = lazy(
+  () => import("./components/PropertyCard/PropertyCard")
+);
+
 export type PropertiesListingProps = {
-  loading: boolean,
-  error: Error | null
+  error: Error | null;
 };
 
-const PropertiesListing: React.FC<PropertiesListingProps> = ({loading, error}) => {
-	const data = useStore((state) => state.propertiesList)
+const PropertiesListing: React.FC<PropertiesListingProps> = ({
+  error,
+}) => {
+  const data = useStore((state) => state.propertiesList);
 
-	if(error){
-		console.error(error);
-	}
+  if (error) {
+    console.error(error);
+  }
 
   return (
     <section className="page_section">
       <div className="container">
-		{loading && <>Loading...</>}
-        <div>
-			{data && (
-				<ul>
-					{data.map((property) => (
-						<li key={property.Id}>{property.Title}</li>
-                        
-					))}
-				</ul>
-			)}
-		</div>
+        <h1 className="title_section">Find Your Home</h1>
+
+        <div className={styles.cards_container}>
+          <Suspense fallback={<>Loading...</>}>
+            {data && (
+              <>
+                {data.map((property) => (
+                  <PropertyCard
+                    id={property.Id}
+                    picture={property.PictureURL}
+                    location={property.Location}
+                    title={property.Title}
+                    bedrooms={property.Bedrooms}
+                    bathrooms={property.Bathrooms}
+                    price={property["Sale Price"]}
+                    key={property.Id}
+                  />
+                ))}
+              </>
+            )}
+          </Suspense>
+        </div>
       </div>
     </section>
   );

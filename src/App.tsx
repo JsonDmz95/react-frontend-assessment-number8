@@ -43,7 +43,7 @@ function App() {
             element={
               <>
                 {/* TODO: Add Page Tile */}
-                <PropertiesListing loading={loading} error={error}/>
+                <PropertiesListing error={error}/>
               </>
             }
           />

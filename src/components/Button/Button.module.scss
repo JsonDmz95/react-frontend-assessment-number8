@@ -1,0 +1,16 @@
+.button {
+  appearance: none;
+  background: var(--color-primary);
+  font-size: var(--font-size-body);
+  cursor: pointer;
+  line-height: 1;
+  padding: 1em 2em;
+  border: var(--border-width) solid var(--border-color);
+  border-radius: var(--border-radius-button);
+
+  &:hover,
+  &:focus,
+  &:active {
+    box-shadow: var(--shadow-hover);
+  }
+}

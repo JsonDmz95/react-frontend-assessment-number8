@@ -18,7 +18,8 @@
   margin: 0;
 }
 
-body, html {
+body,
+html {
   min-width: 320px;
   min-height: 100vh;
   margin: 0;
@@ -26,9 +27,9 @@ body, html {
 }
 
 #__next {
-    min-height: 100vh;
-    min-width: 100vw;
-  }
+  min-height: 100vh;
+  min-width: 100vw;
+}
 
 .container {
   padding: 0 30px;
@@ -48,32 +49,60 @@ a {
   }
 }
 
-.hide_mobile{
-    display: none;
+.title,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 800;
+  color: var(--color-text);
+  margin-top: 0;
+}
+.title_page {
+  font-size: var(--font-heading);
 }
 
-.visible_mobile{
-    display: block;
+.title_section {
+  font-size: var(--font-title);
+  margin-bottom: 1.875em;
 }
 
-.page_section{
+.title_component {
+  font-size: var(--font-subtitle);
+}
+
+.small {
+  font-size: var(--font-small);
+}
+
+.hide_mobile {
+  display: none;
+}
+
+.visible_mobile {
+  display: block;
+}
+
+.page_section {
   position: relative;
   display: block;
   padding: 2.5em 0 6.25em;
 }
 
-@media (min-width:  768px){
-    .hide_mobile{
-        display: inline-block;
-    }
+@media (min-width: 768px) {
+  .hide_mobile {
+    display: inline-block;
+  }
 
-    .visible_mobile{
-        display: none;
-    }
-}
-
-@media (min-width: 1440px) {
-  .container {
-    max-width: 1440px;
+  .visible_mobile {
+    display: none;
   }
 }
+
+// @media (min-width: 1440px) {
+//   .container {
+//     max-width: 1440px;
+//   }
+// }

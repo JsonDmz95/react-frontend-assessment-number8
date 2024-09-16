@@ -1,0 +1,57 @@
+.property_card{
+    background-color: var(--color-white);
+    border: var(--border-width) solid var(--border-color);
+    border-radius: var(--border-radius);
+    max-width: 287px;
+    min-height: 100px;
+
+
+    // &:hover, &:focus, &:active{
+    //     box-shadow: var(--shadow-big-hover);
+    // }
+}
+
+.property_image{
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+    width: 100%;
+    max-width: 100%;
+}
+
+.card_body{
+    padding: 0.75em;
+}
+
+.card_location{
+    font-size: var(--font-small);
+    text-transform: uppercase;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 8px 5px 5px;
+    border: 1px solid var(--color-light-grey);
+    max-width: fit-content;
+    margin-bottom: 0.75em;
+}
+
+.card_title{
+    font-weight: 500;
+    margin-bottom: 0.2em;
+    min-height: 55px;
+}
+
+.card_rooms{
+    font-size: var(--font-small);
+    color: var(--color-grey);
+    margin-bottom: 0.625em;
+    line-height: 1;
+    display: block;
+}
+
+.card_price{
+    font-weight: 800;
+    font-size: 1.5em;
+    line-height: 1;
+    display: block;
+    margin-bottom: 1.125em;
+}

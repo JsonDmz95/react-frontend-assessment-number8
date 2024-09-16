@@ -1,3 +1,13 @@
-.propertieslisting {
-  
+.cards_container{
+    display: flex;
+    flex-direction: row;
+    gap: 1.875em;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+@media (min-width: 1300px) {
+    .cards_container{
+        justify-content: stretch;
+    }
 }
