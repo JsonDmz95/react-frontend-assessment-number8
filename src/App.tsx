@@ -57,7 +57,7 @@ function App() {
           {/* PropertyDetails Page  */}
           <Route
             path={`${PublicRoutes.PROPERTY_DETAILS}/:id`}
-            element={<PropertyDetails />}
+            element={<PropertyDetails error={error}/>}
           />
 
           {/* Send everything else to 404 */}

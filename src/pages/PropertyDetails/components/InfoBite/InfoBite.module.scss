@@ -1,0 +1,16 @@
+.infobite {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.1;
+}
+
+.qty {
+  font-size: 1.75em;
+  font-weight: 800;
+}
+
+.stat {
+  text-transform: uppercase;
+  font-weight: 600;
+}
