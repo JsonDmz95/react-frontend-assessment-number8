@@ -1,22 +1,35 @@
-import type { Meta, StoryObj } from "@storybook/react"
-import CustomDialog from "./CustomDialog"
+import type { Meta, StoryFn } from "@storybook/react"
+import CustomDialog, { CustomDialogProps, dialogOpenSubject$ } from "./CustomDialog"
+import { Button } from "@mui/material";
 
 const meta = {
-    title: 'CustomDialog',
+    title: 'Components/CustomDialog',
     component: CustomDialog,
     tags: ['autodocs'],
 	parameters: {
-		layout: 'fullscreen',
+		layout: 'centered',
 	},
 	argTypes: {},
 } satisfies Meta<typeof CustomDialog>;
 
 export default meta;
 
-type Story = StoryObj<typeof CustomDialog>;
-
-export const Default = {
-    args: {
-        // props
-    },
-} satisfies Story;
+const Template: StoryFn<CustomDialogProps> = (args) => (
+    <>
+      <Button variant="outlined" onClick={() => dialogOpenSubject$.setSubject = true}>
+        Open Dialog
+      </Button>
+      <CustomDialog {...args} />
+    </>
+  );
+  
+  // Story for the default dialog with content
+  export const DefaultDialog = Template.bind({});
+  DefaultDialog.args = {
+    children: (
+      <div style={{ padding: '20px' }}>
+        <h2>Favorite Properties</h2>
+        <p>This dialog shows your favorite properties list.</p>
+      </div>
+    ),
+  };

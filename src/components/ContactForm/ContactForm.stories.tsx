@@ -2,11 +2,11 @@ import type { Meta, StoryObj } from "@storybook/react"
 import ContactForm from "./ContactForm"
 
 const meta = {
-    title: 'ContactForm',
+    title: 'Layout/ContactForm',
     component: ContactForm,
     tags: ['autodocs'],
 	parameters: {
-		layout: 'fullscreen',
+		layout: 'centered',
 	},
 	argTypes: {},
 } satisfies Meta<typeof ContactForm>;
