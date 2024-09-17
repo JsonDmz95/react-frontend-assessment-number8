@@ -20,7 +20,7 @@ npm install
 
 4. Start the server executing:
 ```
-npm dev
+npm run dev
 ```
 
 ### Optional: Testing and UI documentation
