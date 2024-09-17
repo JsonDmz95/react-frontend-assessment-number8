@@ -2,7 +2,7 @@
 
 This the MVP React app working in Vite with HMR and some ESLint rules.
 
-The project was structured following the principles of ** Clean Architecture **
+The project was structured following the principles of **Clean Architecture**
 
 ## Setup (Installation and Run)
 
