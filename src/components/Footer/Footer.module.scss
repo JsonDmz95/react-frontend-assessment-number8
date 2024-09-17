@@ -1,0 +1,26 @@
+.footer {
+  padding: 1.75em;
+  border-top: var(--border-width) solid var(--border-color);
+}
+
+.footer_container{
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+}
+
+.logo_container{
+    text-decoration: none;
+
+    &:hover, &:focus, &:active{
+        text-decoration: none;
+        opacity: 0.75;
+    }
+}
+
+@media (min-width: 768px) {
+    .footer_container{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}

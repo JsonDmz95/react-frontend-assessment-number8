@@ -5,3 +5,4 @@ export { default as FavoritesTable } from './FavoritesTable/FavoritesTable';
 export { default as Header } from "./Header/Header";
 export { default as Logo } from "./Logo/Logo";
 export { default as NavItem } from "./NavItem/NavItem";
+export { default as Footer } from './Footer/Footer';

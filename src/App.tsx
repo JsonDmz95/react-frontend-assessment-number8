@@ -1,8 +1,8 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { Footer, Header } from "@/components";
 import { PropertiesListing, PropertyDetails } from "@/pages";
 import { Property, PublicRoutes } from "@/models";
 
-import { Header } from "@/components";
 import { useEffect } from "react";
 import { useFetch } from "@/hooks";
 import { useStore } from "@/store";
@@ -71,6 +71,7 @@ function App() {
             }
           />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </div>
   );

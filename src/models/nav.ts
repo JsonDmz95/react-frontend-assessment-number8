@@ -7,3 +7,7 @@ export const Nav = {
         LABEL: 'Favorites',
     },
 }
+
+export const Social ={
+    LINKEDIN: 'https://www.linkedin.com/in/dominguez-js/'
+}
