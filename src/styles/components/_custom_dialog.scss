@@ -1,0 +1,9 @@
+.MuiPaper-root{
+    border: var(--border-width) solid var(--border-color);
+    padding: 2em 1.3em;
+
+    .title_section{
+        margin-top: 0;
+        margin-bottom: 0.5em;
+    }
+}

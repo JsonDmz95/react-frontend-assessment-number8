@@ -20,6 +20,7 @@ const PropertyDetails: React.FC<PropertyDetailsProps> = ({ error }) => {
 
   const { id } = useParams();
   const properties = useStore((state) => state.propertiesList);
+  const addFavorite = useStore((state) => state.updateFavoritesList);
 
   const navigate = useNavigate();
 
@@ -35,6 +36,11 @@ const PropertyDetails: React.FC<PropertyDetailsProps> = ({ error }) => {
       }
     }
   }, [id, properties, navigate]);
+
+  const handleClick = () => {
+    if (!currentProperty) return;
+    addFavorite(currentProperty);
+  }
 
   if(error){
 	console.error(error);
@@ -54,9 +60,7 @@ const PropertyDetails: React.FC<PropertyDetailsProps> = ({ error }) => {
               </strong>
               <Button
                 title="Save Property"
-                onClick={() => {
-                  return;
-                }}
+                onClick={handleClick}
               >
                 <Favorite /> Save Property
               </Button>
