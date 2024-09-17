@@ -21,6 +21,12 @@
     gap: 0.5em;
 }
 
+.content_layout{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+}
+
 .image_container{
     width: 100%;
     height: 350px;
@@ -48,6 +54,12 @@
     gap: 2em;
 
     margin-bottom: 2em;
+}
+
+@media (min-width: 992px) {
+    .content_layout{
+        flex-direction: row;
+    }
 }
 
 @media (min-width: 1200px) {

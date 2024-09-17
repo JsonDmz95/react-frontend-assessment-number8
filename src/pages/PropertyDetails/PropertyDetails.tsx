@@ -1,11 +1,11 @@
 "use client";
 
+import { Button, ContactForm } from "@/components";
 import { Favorite, LocationOn, WatchLater } from '@mui/icons-material';
 import React, { useEffect, useState } from "react";
 import { formatDate, numberWithCommas } from "@/utilities";
 import { useNavigate, useParams } from "react-router-dom";
 
-import { Button } from "@/components";
 import { InfoBite } from './components';
 import { Property } from "@/models";
 import styles from "./PropertyDetails.module.scss";
@@ -71,7 +71,7 @@ const PropertyDetails: React.FC<PropertyDetailsProps> = ({ error }) => {
 				</span>
 			</div>
 
-			<div className="content_layout">
+			<div className={styles.content_layout}>
 				<div className="property_info">
 					<div className={styles.image_container}>
 						<img className={styles.property_image} src={currentProperty.PictureURL} alt={currentProperty.Title} />
@@ -89,6 +89,10 @@ const PropertyDetails: React.FC<PropertyDetailsProps> = ({ error }) => {
 						<p>{currentProperty.Description}</p>
 					</div>
 				</div>
+
+        <div className="form_layout">
+        <ContactForm />
+        </div>
 			</div>
           </div>
         </section>
