@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, ContactForm } from "@/components";
+import { Button, ContactForm, PageTitle } from "@/components";
 import { Favorite, LocationOn, WatchLater } from '@mui/icons-material';
 import React, { useEffect, useState } from "react";
 import { formatDate, numberWithCommas } from "@/utilities";
@@ -48,8 +48,10 @@ const PropertyDetails: React.FC<PropertyDetailsProps> = ({ error }) => {
 
   return (
     <>
+    
       {currentProperty && (
         <section className="page_section">
+          <PageTitle title={currentProperty?.Title}/>
           <div className="container">
             <div className={styles.title_grid}>
               <h1 className={`title_page ${styles.property_title}`}>

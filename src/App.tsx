@@ -1,5 +1,5 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-import { Footer, Header } from "@/components";
+import { Footer, Header, PageTitle } from "@/components";
 import { PropertiesListing, PropertyDetails } from "@/pages";
 import { Property, PublicRoutes } from "@/models";
 
@@ -42,7 +42,7 @@ function App() {
             path={PublicRoutes.PROPERTIES_LIST}
             element={
               <>
-                {/* TODO: Add Page Tile */}
+                <PageTitle title="Properties"/>
                 <PropertiesListing error={error}/>
               </>
             }
@@ -65,8 +65,8 @@ function App() {
             path="*"
             element={
               <>
-                {/* <PageTitle title="404 - Error" /> */}
-                NOT FOUND
+                <PageTitle title="404 - Error" />
+                <h1 className="title_page">NOT FOUND</h1>
               </>
             }
           />
