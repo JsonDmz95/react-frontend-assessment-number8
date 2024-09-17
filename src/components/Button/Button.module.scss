@@ -5,6 +5,7 @@
   font-weight: 600;
   cursor: pointer;
   line-height: 1;
+  font-size: 1em;
   padding: 1em 2em;
   border: var(--border-width) solid var(--border-color);
   border-radius: var(--border-radius-button);
@@ -14,4 +15,8 @@
   &:active {
     box-shadow: var(--shadow-hover);
   }
+}
+
+.secondary {
+  background: var(--color-white);
 }

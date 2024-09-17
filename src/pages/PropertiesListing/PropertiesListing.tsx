@@ -3,6 +3,7 @@
 // import { PropertyCard } from "./components";
 import React, { Suspense, lazy, useCallback, useEffect, useState } from "react";
 
+import { Button } from "@/components";
 import { Property } from "@/models";
 import { SelectFilter } from "./components";
 import styles from "./PropertiesListing.module.scss";
@@ -25,8 +26,8 @@ const PropertiesListing: React.FC<PropertiesListingProps> = ({ error }) => {
   const [bedrooms, setBedrooms] = useState<number>(0);
   const [bathrooms, setBathrooms] = useState<number>(0);
   const [parking, setParking] = useState<number>(0);
-  const [minPrice, setMinPrice] = useState<number>(0);
-  const [maxPrice, setMaxPrice] = useState<number>(0);
+  const [minPrice, setMinPrice] = useState<number | "">("");
+  const [maxPrice, setMaxPrice] = useState<number | "">("");
 
   useEffect(() => {
     setPropertiesList(data);
@@ -66,8 +67,8 @@ const PropertiesListing: React.FC<PropertiesListingProps> = ({ error }) => {
     setBedrooms(0);
     setBathrooms(0);
     setParking(0);
-    setMinPrice(0);
-    setMaxPrice(0);
+    setMinPrice("");
+    setMaxPrice("");
     setPropertiesList(data); // Reset to the original list
   }, [data]);
 
@@ -88,40 +89,52 @@ const PropertiesListing: React.FC<PropertiesListingProps> = ({ error }) => {
       <div className="container">
         <h1 className="title_section">Find Your Home</h1>
 
-        <div className="filters">
-          <SelectFilter
-            name="bedrooms"
-            value={bedrooms}
-            max={maxBedrooms}
-            onChange={(e) => setBedrooms(parseInt(e.target.value))}
-          />
-          <SelectFilter
-            name="bathrooms"
-            value={bathrooms}
-            max={maxBathrooms}
-            onChange={(e) => setBathrooms(parseInt(e.target.value))}
-          />
-          <SelectFilter
-            name="parking"
-            value={parking}
-            max={maxParking}
-            onChange={(e) => setParking(parseInt(e.target.value))}
-          />
-          <input
-            type="number"
-            placeholder="Min Price"
-            value={minPrice}
-            onChange={(e) => setMinPrice(parseInt(e.target.value))}
-          />
-          <input
-            type="number"
-            placeholder="Max Price"
-            value={maxPrice}
-            onChange={(e) => setMaxPrice(parseInt(e.target.value))}
-          />
-          <button onClick={handleClear}>Clear</button>
-          <button onClick={handleSearch}>Search</button>
+        <div className={styles.filters}>
+          <div className={styles.selects_container}>
+            <SelectFilter
+              name="bedrooms"
+              value={bedrooms}
+              max={maxBedrooms}
+              onChange={(e) => setBedrooms(parseInt(e.target.value))}
+            />
+            <SelectFilter
+              name="bathrooms"
+              value={bathrooms}
+              max={maxBathrooms}
+              onChange={(e) => setBathrooms(parseInt(e.target.value))}
+            />
+            <SelectFilter
+              name="parking"
+              value={parking}
+              max={maxParking}
+              onChange={(e) => setParking(parseInt(e.target.value))}
+            />
+          </div>
+          <div className={styles.price_filter}>
+            <input
+              type="number"
+              placeholder="Min Price"
+              value={minPrice}
+              onChange={(e) => setMinPrice(parseInt(e.target.value))}
+            />
+            <div className={styles.divider}>-</div>
+            <input
+              type="number"
+              placeholder="Max Price"
+              value={maxPrice}
+              onChange={(e) => setMaxPrice(parseInt(e.target.value))}
+            />
+          </div>
+          <div className={styles.buttons_container}>
+            <Button title="Clear" onClick={handleClear} variant="secondary">Clear</Button>
+            <Button title="Search" onClick={handleSearch}>
+              Search
+            </Button>
+          </div>
         </div>
+        <p className={styles.result_counter}>
+          {propertiesList.length} total results
+        </p>
 
         <div className={styles.cards_container}>
           <Suspense fallback={<>Loading...</>}>

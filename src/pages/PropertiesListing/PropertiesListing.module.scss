@@ -6,8 +6,42 @@
     flex-wrap: wrap;
 }
 
-@media (min-width: 1300px) {
+@media (min-width: 1200px) {
     .cards_container{
-        justify-content: stretch;
+        justify-content: space-between;
     }
+}
+
+.filters{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.2em;
+    gap: 2em;
+    flex-wrap: wrap;
+}
+
+.selects_container{
+    display: flex;
+    gap: 1.33em;
+    flex: 1;
+}
+
+.price_filter{
+    display: flex;
+    gap: 0.75em;
+    align-items: center;
+
+    .divider{
+        font-size: 1.5em;
+    }
+}
+
+.buttons_container{
+    display: flex;
+    gap: 1em;
+}
+
+.result_counter{
+    color: var(--color-grey);
+    margin-bottom: 3em;
 }

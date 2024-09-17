@@ -17,7 +17,7 @@ const SelectFilter: React.FC<SelectFilterProps> = ({
 }) => {
   const options = Array.from({ length: max + 1 }, (_, i) => i).map((num) => (
     <option key={num} value={num}>
-      {num || `Select ${name}`}
+      {num || `${name}`}
     </option>
   ));
 
